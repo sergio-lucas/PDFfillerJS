@@ -2,17 +2,17 @@ function difference(arr, itemsToExclude) {
     return arr.filter( ( exclude ) => {
       return itemsToExclude.indexOf( exclude ) < 0;
     } );
-  }
+}
 difference([2, 1, 5], [2, 3]) 
 function groupBy(array, value) {
-    return array.reduce(function (prev, curr) {
+    return array.reduce( (prev, curr) => {
       prev[curr[value]] = prev[curr[value]] || []; // if undefined => create object key with empty array value
       prev[curr[value]].push(curr);
       return prev;
   }, {});
 }
   
-  groupBy([{ gender: 'male', name: 'Max'}, { gender: 'male', name: 'Fred'},
+groupBy([{ gender: 'male', name: 'Max'}, { gender: 'male', name: 'Fred'},
   { gender: 'female', name: 'Jane'}], 'gender'); 
   
 function flatten(array) {
@@ -24,10 +24,10 @@ function flatten(array) {
 flatten([1, [2, [3, [4]], 5]]);
   
 function uniq(array) {
-    var uniqItems = []
+    let uniqItems = [];
     for (let index = 0; index < array.length; index++) {
       if ( uniqItems.indexOf(array[index]) < 0) {
-        uniqItems.push(array[index])
+        uniqItems.push(array[index]);
       }
     }
     return uniqItems;
